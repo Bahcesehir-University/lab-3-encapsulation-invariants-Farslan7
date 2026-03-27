@@ -104,7 +104,7 @@ public:
     // Throw std::invalid_argument if amount <= 0
     void deposit(double amount) {
         // TODO: Implement
-        if(amount<0) throw invalid_argument("Amount cannot be negative.");
+        if(amount<=0) throw invalid_argument("Amount cannot be negative.");
         balance_+=amount;
     }
 
@@ -113,7 +113,7 @@ public:
     // Throw std::runtime_error if insufficient funds
     void withdraw(double amount) {
         // TODO: Implement
-        if(amount<0) throw invalid_argument("Amount cannot be negative.");
+        if(amount<=0) throw invalid_argument("Amount cannot be negative.");
         if(balance_<amount) throw runtime_error("Funds are insufficient.");
         balance_-=amount;
     }
