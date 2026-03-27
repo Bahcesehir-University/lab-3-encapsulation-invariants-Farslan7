@@ -156,7 +156,7 @@ private:
     static void validate(const string& pwd) {
         // TODO: Check length >= 8 and hasDigit
         // Throw std::invalid_argument with descriptive message if invalid
-        if(pwd.size()>=8 && hasDigit(pwd)){ return; }
+        if(pwd.length()>=8 && hasDigit(pwd)){ return; }
         throw invalid_argument("Password is invalid");
     }
 
@@ -182,14 +182,13 @@ public:
     // Check if a given string matches the stored password.
     bool matches(const string& attempt) const {
         // TODO: Implement
-        if(attempt == password_) return true;
-        return false;
+        return attempt == password_;
     }
 
     // Return the length of the password (safe to expose)
     size_t getLength() const {
         // TODO: Implement
-        return password_.size();
+        return password_.length();
     }
 
     // NOTE: There is deliberately NO getPassword() method.
