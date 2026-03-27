@@ -149,7 +149,7 @@ private:
                 
             }
         }
-        return true;
+        return false;
     }
 
     // Helper: validate password against all rules
