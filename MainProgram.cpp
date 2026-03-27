@@ -174,7 +174,7 @@ public:
     // Throw std::invalid_argument if newPassword fails validation
     void change(const string& oldPassword, const string& newPassword) {
         // TODO: Implement
-        if (oldPassword != password_) throw invalid_argument("Old password doesn't match");
+        if (oldPassword != password_) throw invalid_argument("Old password does not match");
         validate(newPassword);
         password_ = newPassword;
     }
